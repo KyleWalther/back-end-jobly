@@ -11,11 +11,12 @@ const PORT = +process.env.PORT || 3001;
 
 // Use dev database, testing database, or via env var, production database
 function getDatabaseUri() {
-  const user = "kylewalther"; // replace with your actual username
-  const password = "password"; // replace with your actual password
+  const user = "KyleWalther"; // your Supabase username
+  const password = "RickiFlare15!"; // your Supabase password
   const dbName = process.env.NODE_ENV === "test" ? "jobly_test" : "jobly";
   
-  return `postgresql://${user}:${password}@localhost:5432/${dbName}`;
+  // Update to connect to your Supabase database
+  return `postgresql://${user}:${password}@aws-0-us-west-1.pooler.supabase.com:6543/${dbName}`;
 }
 
 // Speed up bcrypt during tests, since the algorithm safety isn't being tested
